@@ -17,6 +17,7 @@ from requests import head
 from util.six import withMetaclass
 from util.singleton import Singleton
 from handler.configHandler import ConfigHandler
+from handler.logHandler import LogHandler
 
 conf = ConfigHandler()
 
@@ -59,10 +60,13 @@ def formatValidator(proxy):
 def httpTimeOutValidator(proxy):
     """ http检测超时 """
 
+    log = LogHandler("requests")
     proxies = {"http": "http://{proxy}".format(proxy=proxy), "https": "https://{proxy}".format(proxy=proxy)}
 
     try:
         r = head(conf.httpUrl, headers=HEADER, proxies=proxies, timeout=conf.verifyTimeout)
+        log.info(conf.httpBody)
+        log.info(r.text)
         return True if r.status_code == 200 and conf.httpBody in r.text else False
     except Exception as e:
         return False
@@ -78,4 +82,3 @@ def httpsTimeOutValidator(proxy):
         return True if r.status_code == 200 else False
     except Exception as e:
         return False
-
