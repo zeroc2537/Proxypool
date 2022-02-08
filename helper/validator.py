@@ -69,7 +69,7 @@ def httpTimeOutValidator(proxy):
         if r.status_code == 200 and conf.httpBody in r.text:
             return True
         else:
-            log.info(r.status_code)
+            log.info(r.status_code + "【" + r.text + "】")
             return False
     except Exception as e:
         return False
