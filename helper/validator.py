@@ -60,14 +60,17 @@ def formatValidator(proxy):
 def httpTimeOutValidator(proxy):
     """ http检测超时 """
 
-    log = LogHandler("requests")
+    log = LogHandler("Validator")
+
     proxies = {"http": "http://{proxy}".format(proxy=proxy), "https": "https://{proxy}".format(proxy=proxy)}
 
     try:
         r = head(conf.httpUrl, headers=HEADER, proxies=proxies, timeout=conf.verifyTimeout)
-        log.info(conf.httpBody)
-        log.info(r.text)
-        return True if r.status_code == 200 and conf.httpBody in r.text else False
+        if r.status_code == 200 and conf.httpBody in r.text:
+            return True
+        else:
+            log.info(r.status_code)
+            return False
     except Exception as e:
         return False
 
