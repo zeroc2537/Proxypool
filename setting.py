@@ -46,7 +46,7 @@ TABLE_NAME = 'use_proxy'
 PROXY_FETCHER = [
     # "freeProxy01",
     "customProxy00",
-    "customProxy01",
+    # "customProxy01",
     # "freeProxy03",
     # "freeProxy04",
     # "freeProxy05",
@@ -59,16 +59,16 @@ PROXY_FETCHER = [
 
 # ############# proxy validator #################
 # 代理验证目标网站
-HTTP_URL = "http://httpbin.org"
+HTTP_URL = "http://baidu.com"
 HTTPS_URL = "https://www.qq.com"
 VALIDATE_HEADER = 'Server'  # 仅用于HEAD验证方式，百度响应头Server字段KEYWORD可填：bfe   httpbin相应为 gunicorn
-VALIDATE_KEYWORD = 'gunicorn'
+VALIDATE_KEYWORD = 'bfe'
 
 # check 时的线程数量
-CHECK_THREAD = 50
+CHECK_THREAD = 2000
 
 # 代理验证时超时时间
-VERIFY_TIMEOUT = 5
+VERIFY_TIMEOUT = 10
 
 # 近PROXY_CHECK_COUNT次校验中允许的最大失败次数,超过则剔除代理
 MAX_FAIL_COUNT = 1
@@ -77,7 +77,7 @@ MAX_FAIL_COUNT = 1
 # MAX_FAIL_RATE = 0.1
 
 # proxyCheck时代理数量少于POOL_SIZE_MIN触发抓取
-POOL_SIZE_MIN = 500
+POOL_SIZE_MIN = CHECK_THREAD * 2
 
 # ############# scheduler config #################
 
