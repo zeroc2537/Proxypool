@@ -167,18 +167,6 @@ class ProxyFetcher(object):
     @staticmethod
     def customProxy01():
         """
-        前端爬取的总ip列表
-        """
-        url = "http://showmethecode.ml/iptotal.txt"
-
-        resp = WebRequest().get(url, timeout=10)
-        proxies = re.findall(r'proxy\":\"(.*?)\"', resp.text)
-        for proxy in proxies:
-            yield proxy
-
-    @staticmethod
-    def customProxy01():
-        """
         前端爬取的总ip列表基于 /all 和 /get_all
         """
         url = "http://showmethecode.ml/iptotal.txt"
