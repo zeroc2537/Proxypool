@@ -13,7 +13,7 @@
 __author__ = 'JHao'
 
 from re import findall
-from requests import head
+import requests
 from util.six import withMetaclass
 from util.singleton import Singleton
 from handler.configHandler import ConfigHandler
@@ -60,16 +60,18 @@ def formatValidator(proxy):
 def httpTimeOutValidator(proxy):
     """ http检测超时 """
 
-    log = LogHandler("Validator")
+    # log = LogHandler("Validator")
 
     proxies = {"http": "http://{proxy}".format(proxy=proxy), "https": "https://{proxy}".format(proxy=proxy)}
 
     try:
-        r = head(conf.httpUrl, headers=HEADER, proxies=proxies, timeout=conf.verifyTimeout)
-        if r.status_code == 200 and conf.httpBody in r.text:
+        r = requests.head(conf.httpUrl, headers=HEADER, proxies=proxies, timeout=conf.verifyTimeout)
+
+        resp_headers = r.headers
+        if conf.validate_HEADER in resp_headers.keys() and conf.validate_KEYWORD in resp_headers[conf.validate_HEADER]:
             return True
         else:
-            log.info(r.status_code + "【" + r.text + "】")
+            # log.info(resp_headers)
             return False
     except Exception as e:
         return False
@@ -81,7 +83,7 @@ def httpsTimeOutValidator(proxy):
 
     proxies = {"http": "http://{proxy}".format(proxy=proxy), "https": "https://{proxy}".format(proxy=proxy)}
     try:
-        r = head(conf.httpsUrl, headers=HEADER, proxies=proxies, timeout=conf.verifyTimeout, verify=False)
+        r = requests.head(conf.httpsUrl, headers=HEADER, proxies=proxies, timeout=conf.verifyTimeout, verify=False)
         return True if r.status_code == 200 else False
     except Exception as e:
         return False

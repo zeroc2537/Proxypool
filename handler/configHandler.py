@@ -50,8 +50,12 @@ class ConfigHandler(withMetaclass(Singleton)):
         return os.getenv("HTTP_URL", setting.HTTP_URL)
 
     @LazyProperty
-    def httpBody(self):
-        return os.getenv("HTTP_BODY", setting.HTTP_BODY)
+    def validate_KEYWORD(self):
+        return os.getenv("VALIDATE_KEYWORD", setting.VALIDATE_KEYWORD)
+
+    @LazyProperty
+    def validate_HEADER(self):
+        return os.getenv("VALIDATE_HEADER", setting.VALIDATE_HEADER)
 
     @LazyProperty
     def CHECK_THREAD(self):

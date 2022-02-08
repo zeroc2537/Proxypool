@@ -60,9 +60,9 @@ PROXY_FETCHER = [
 # ############# proxy validator #################
 # 代理验证目标网站
 HTTP_URL = "http://httpbin.org"
-HTTP_BODY = "httpbin.org"
-
 HTTPS_URL = "https://www.qq.com"
+VALIDATE_HEADER = 'Server'  # 仅用于HEAD验证方式，百度响应头Server字段KEYWORD可填：bfe   httpbin相应为 gunicorn
+VALIDATE_KEYWORD = 'gunicorn'
 
 # check 时的线程数量
 CHECK_THREAD = 50
