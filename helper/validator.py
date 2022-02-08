@@ -63,7 +63,7 @@ def httpTimeOutValidator(proxy):
 
     try:
         r = head(conf.httpUrl, headers=HEADER, proxies=proxies, timeout=conf.verifyTimeout)
-        return True if r.status_code == 200 else False
+        return True if r.status_code == 200 and conf.httpBody in r.text else False
     except Exception as e:
         return False
 
@@ -79,8 +79,3 @@ def httpsTimeOutValidator(proxy):
     except Exception as e:
         return False
 
-
-@ProxyValidator.addHttpValidator
-def customValidatorExample(proxy):
-    """自定义validator函数，校验代理是否可用, 返回True/False"""
-    return True

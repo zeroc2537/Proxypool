@@ -130,12 +130,14 @@ def Checker(tp, queue):
     :param queue: Proxy Queue
     :return:
     """
+    conf = ConfigHandler()
+
     thread_list = list()
-    for index in range(20):
+    for index in range(conf.CHECK_THREAD):
         thread_list.append(_ThreadChecker(tp, queue, "thread_%s" % str(index).zfill(2)))
 
     for thread in thread_list:
-        thread.setDaemon(True)
+        thread.setDaemon = True
         thread.start()
 
     for thread in thread_list:

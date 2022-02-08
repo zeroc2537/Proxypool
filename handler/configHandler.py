@@ -50,6 +50,14 @@ class ConfigHandler(withMetaclass(Singleton)):
         return os.getenv("HTTP_URL", setting.HTTP_URL)
 
     @LazyProperty
+    def httpBody(self):
+        return os.getenv("HTTP_BODY", setting.HTTP_BODY)
+
+    @LazyProperty
+    def CHECK_THREAD(self):
+        return os.getenv("CHECK_THREAD", setting.CHECK_THREAD)
+
+    @LazyProperty
     def httpsUrl(self):
         return os.getenv("HTTPS_URL", setting.HTTPS_URL)
 
