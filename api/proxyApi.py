@@ -52,44 +52,48 @@ api_list = [
 
 @app.route('/')
 def index():
-    return {'url': api_list}
+    return "<h2>Welcome to this page!</h2>"
 
 
-@app.route('/get/')
+@app.route('/get_one/')
 def get():
     https = request.args.get("type", "").lower() == 'https'
     proxy = proxy_handler.get(https)
     return proxy.to_dict if proxy else {"code": 0, "src": "no proxy"}
 
 
-@app.route('/pop/')
-def pop():
-    https = request.args.get("type", "").lower() == 'https'
-    proxy = proxy_handler.pop(https)
-    return proxy.to_dict if proxy else {"code": 0, "src": "no proxy"}
+# @app.route('/pop/')
+# def pop():
+#     https = request.args.get("type", "").lower() == 'https'
+#     proxy = proxy_handler.pop(https)
+#     return proxy.to_dict if proxy else {"code": 0, "src": "no proxy"}
 
 
-@app.route('/refresh/')
-def refresh():
-    # TODO refresh会有守护程序定时执行，由api直接调用性能较差，暂不使用
-    return 'success'
+@app.errorhandler(404)
+def miss():
+    return "<h1>404 Not Found!</h1>"
 
 
-@app.route('/all/')
+@app.errorhandler(500)
+def error():
+    return "<h1>500 Error!</h1>"
+
+
+@app.route('/get_all/')
 def getAll():
     https = request.args.get("type", "").lower() == 'https'
     proxies = proxy_handler.getAll(https)
     return jsonify([_.to_dict for _ in proxies])
 
 
-@app.route('/delete/', methods=['GET'])
+@app.route('/delete_one/', methods=['GET'])
 def delete():
     proxy = request.args.get('proxy')
     status = proxy_handler.delete(Proxy(proxy))
     return {"code": 0, "src": status}
 
 
-@app.route('/count/')
+@app.route('/count_proxy/')
 def getCount():
     status = proxy_handler.getCount()
     return status

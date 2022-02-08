@@ -30,14 +30,14 @@ VERSION = "2.4.0"
 # ############### server config ###############
 HOST = "0.0.0.0"
 
-PORT = 5010
+PORT = 6020
 
 # ############### database config ###################
 # db connection uri
 # example:
 #      Redis: redis://:password@ip:port/db
 #      Ssdb:  ssdb://:password@ip:port
-DB_CONN = 'redis://:asd4z5x4qwe@127.0.0.1:6379/0'
+DB_CONN = 'redis://:proxy666@127.0.0.1:6379/0'
 
 # proxy table name
 TABLE_NAME = 'use_proxy'
@@ -45,16 +45,16 @@ TABLE_NAME = 'use_proxy'
 
 # ###### config the proxy fetch function ######
 PROXY_FETCHER = [
-   # "freeProxy01",
-    "freeProxy02",
-   # "freeProxy03",
-   # "freeProxy04",
-   # "freeProxy05",
-   # "freeProxy06",
-   # "freeProxy07",
-   # "freeProxy08",
-   # "freeProxy09",
-   # "freeProxy10"
+    # "freeProxy01",
+    "customProxy01",
+    # "freeProxy03",
+    # "freeProxy04",
+    # "freeProxy05",
+    # "freeProxy06",
+    # "freeProxy07",
+    # "freeProxy08",
+    # "freeProxy09",
+    # "freeProxy10"
 ]
 
 # ############# proxy validator #################
@@ -73,7 +73,7 @@ MAX_FAIL_COUNT = 2
 # MAX_FAIL_RATE = 0.1
 
 # proxyCheck时代理数量少于POOL_SIZE_MIN触发抓取
-POOL_SIZE_MIN = 200
+POOL_SIZE_MIN = 10000
 
 # ############# scheduler config #################
 
