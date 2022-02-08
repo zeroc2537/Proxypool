@@ -172,7 +172,7 @@ class ProxyFetcher(object):
         url = "http://showmethecode.ml/iptotal.txt"
 
         resp = WebRequest().get(url, timeout=10)
-        proxies = re.findall(r'proxy\":\"(.*?)\"', resp.text)
+        proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
         for proxy in proxies:
             yield proxy
 
