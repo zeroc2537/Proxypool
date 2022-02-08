@@ -165,11 +165,23 @@ class ProxyFetcher(object):
     #         yield ':'.join(proxy)
 
     @staticmethod
+    def customProxy00():
+        """
+        前端爬取的总ip列表基于 /all 和 /get_all
+        """
+        url = "http://showmethecode.ml/total_1_00"
+
+        resp = WebRequest().get(url, timeout=10)
+        proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
+        for proxy in proxies:
+            yield proxy
+
+    @staticmethod
     def customProxy01():
         """
         前端爬取的总ip列表基于 /all 和 /get_all
         """
-        url = "http://showmethecode.ml/iptotal.txt"
+        url = "http://showmethecode.ml/total_1_01"
 
         resp = WebRequest().get(url, timeout=10)
         proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
