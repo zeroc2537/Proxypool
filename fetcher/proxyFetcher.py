@@ -13,7 +13,6 @@
 __author__ = 'JHao'
 
 import re
-from time import sleep
 
 from util.webRequest import WebRequest
 
@@ -169,24 +168,24 @@ class ProxyFetcher(object):
         """
         前端爬取的总ip列表基于 /all 和 /get_all
         """
-        url = "http://showmethecode.ml/total_1_02"
+        url = "http://showmethecode.ml/iptotal1.txt"
 
         resp = WebRequest().get(url, timeout=10)
         proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
         for proxy in proxies:
             yield proxy
 
-    @staticmethod
-    def customProxy01():
-        """
-        前端爬取的总ip列表基于 /all 和 /get_all
-        """
-        url = "http://showmethecode.ml/total_1_03"
-
-        resp = WebRequest().get(url, timeout=10)
-        proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
-        for proxy in proxies:
-            yield proxy
+    # @staticmethod
+    # def customProxy01():
+    #     """
+    #     前端爬取的总ip列表基于 /all 和 /get_all
+    #     """
+    #     url = "http://showmethecode.ml/total_1_03"
+    #
+    #     resp = WebRequest().get(url, timeout=10)
+    #     proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
+    #     for proxy in proxies:
+    #         yield proxy
 
     # @staticmethod
     # def wallProxy01():

@@ -46,7 +46,7 @@ TABLE_NAME = 'use_proxy'
 PROXY_FETCHER = [
     # "freeProxy01",
     "customProxy00",
-    "customProxy01",
+    # "customProxy01",
     # "customProxy01",
     # "freeProxy03",
     # "freeProxy04",
@@ -69,10 +69,10 @@ VALIDATE_KEYWORD = 'bfe'
 CHECK_THREAD = 1000
 
 # 代理验证时超时时间
-VERIFY_TIMEOUT = 5
+VERIFY_TIMEOUT = 10
 
 # 近PROXY_CHECK_COUNT次校验中允许的最大失败次数,超过则剔除代理
-MAX_FAIL_COUNT = 1
+MAX_FAIL_COUNT = 3
 
 # 近PROXY_CHECK_COUNT次校验中允许的最大失败率,超过则剔除代理
 # MAX_FAIL_RATE = 0.1
