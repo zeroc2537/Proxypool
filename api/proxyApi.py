@@ -16,13 +16,15 @@
 __author__ = 'JHao'
 
 import platform
-from werkzeug.wrappers import Response
-from flask import Flask, jsonify, request
+import re
 
-from util.six import iteritems
-from helper.proxy import Proxy
-from handler.proxyHandler import ProxyHandler
+from flask import Flask, jsonify, request
+from werkzeug.wrappers import Response
+
 from handler.configHandler import ConfigHandler
+from handler.proxyHandler import ProxyHandler
+from helper.proxy import Proxy
+from util.six import iteritems
 
 app = Flask(__name__)
 conf = ConfigHandler()
@@ -71,6 +73,20 @@ def get():
 
 @app.route('/get_all/')
 def getAll():
+    https = request.args.get("type", "").lower() == 'https'
+    proxies = proxy_handler.getAll(https)
+
+    verify_regex = r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,5}"
+    _proxy = re.findall(verify_regex, str(proxies))
+    resp = ""
+    for _ in proxies:
+        resp += _ + "\n"
+
+    return resp
+
+
+@app.route('/status_all/')
+def getAll2():
     https = request.args.get("type", "").lower() == 'https'
     proxies = proxy_handler.getAll(https)
     return jsonify([_.to_dict for _ in proxies])

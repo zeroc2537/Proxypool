@@ -69,10 +69,10 @@ VALIDATE_KEYWORD = 'gunicorn'
 CHECK_THREAD = 1000
 
 # 代理验证时超时时间
-VERIFY_TIMEOUT = 5
+VERIFY_TIMEOUT = 15
 
 # 近PROXY_CHECK_COUNT次校验中允许的最大失败次数,超过则剔除代理
-MAX_FAIL_COUNT = 1
+MAX_FAIL_COUNT = 0
 
 # 近PROXY_CHECK_COUNT次校验中允许的最大失败率,超过则剔除代理
 # MAX_FAIL_RATE = 0.1
