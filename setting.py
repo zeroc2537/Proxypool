@@ -72,13 +72,13 @@ CHECK_THREAD = 1000
 VERIFY_TIMEOUT = 15
 
 # 近PROXY_CHECK_COUNT次校验中允许的最大失败次数,超过则剔除代理
-MAX_FAIL_COUNT = 0
+MAX_FAIL_COUNT = 2
 
 # 近PROXY_CHECK_COUNT次校验中允许的最大失败率,超过则剔除代理
 # MAX_FAIL_RATE = 0.1
 
 # proxyCheck时代理数量少于POOL_SIZE_MIN触发抓取
-POOL_SIZE_MIN = CHECK_THREAD * 2
+POOL_SIZE_MIN = 500
 
 # ############# scheduler config #################
 
