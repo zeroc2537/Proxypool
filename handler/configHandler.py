@@ -13,9 +13,10 @@
 __author__ = 'JHao'
 
 import os
+
 import setting
-from util.singleton import Singleton
 from util.lazyProperty import LazyProperty
+from util.singleton import Singleton
 from util.six import reload_six, withMetaclass
 
 
@@ -86,6 +87,13 @@ class ConfigHandler(withMetaclass(Singleton)):
         return int(os.getenv("POOL_SIZE_MIN", setting.POOL_SIZE_MIN))
 
     @LazyProperty
+    def proxy_check_time(self):
+        return os.getenv("PROXY_CHECK_TIME", setting.PROXY_CHECK_TIME)
+
+    @LazyProperty
+    def proxy_fetch_time(self):
+        return os.getenv("PROXY_FETCH_TIME", setting.PROXY_FETCH_TIME)
+
+    @LazyProperty
     def timezone(self):
         return os.getenv("TIMEZONE", setting.TIMEZONE)
-
