@@ -69,16 +69,6 @@ def get():
 #     return proxy.to_dict if proxy else {"code": 0, "src": "no proxy"}
 
 
-@app.errorhandler(404)
-def miss():
-    return "<h1>404 Not Found!</h1>"
-
-
-@app.errorhandler(500)
-def error():
-    return "<h1>500 Error!</h1>"
-
-
 @app.route('/get_all/')
 def getAll():
     https = request.args.get("type", "").lower() == 'https'
