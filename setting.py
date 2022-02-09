@@ -72,7 +72,7 @@ CHECK_THREAD = 1000
 VERIFY_TIMEOUT = 10
 
 # 近PROXY_CHECK_COUNT次校验中允许的最大失败次数,超过则剔除代理
-MAX_FAIL_COUNT = 3
+MAX_FAIL_COUNT = 1
 
 # 近PROXY_CHECK_COUNT次校验中允许的最大失败率,超过则剔除代理
 # MAX_FAIL_RATE = 0.1
