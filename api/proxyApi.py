@@ -76,11 +76,9 @@ def getAll():
     https = request.args.get("type", "").lower() == 'https'
     proxies = proxy_handler.getAll(https)
 
-    verify_regex = r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,5}"
-    _proxy = re.findall(verify_regex, str(proxies))
     resp = ""
-    for _ in proxies:
-        resp += _ + "\n"
+    for i in proxies:
+        resp += i + "\n"
 
     return resp
 
