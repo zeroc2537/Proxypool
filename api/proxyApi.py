@@ -75,18 +75,6 @@ def get():
 def getAll():
     https = request.args.get("type", "").lower() == 'https'
     proxies = proxy_handler.getAll(https)
-
-    resp = ""
-    for i in proxies:
-        resp += i + "\n"
-
-    return resp
-
-
-@app.route('/status_all/')
-def getAll2():
-    https = request.args.get("type", "").lower() == 'https'
-    proxies = proxy_handler.getAll(https)
     return jsonify([_.to_dict for _ in proxies])
 
 
