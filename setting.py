@@ -37,7 +37,7 @@ PORT = 6020
 # example:
 #      Redis: redis://:password@ip:port/db
 #      Ssdb:  ssdb://:password@ip:port
-DB_CONN = 'redis://:proxy666@127.0.0.1:6379/0'
+DB_CONN = 'redis://:proxy666@45.63.21.90:6379/0'
 
 # proxy table name
 TABLE_NAME = 'use_proxy'
@@ -46,6 +46,7 @@ TABLE_NAME = 'use_proxy'
 PROXY_FETCHER = [
     # "freeProxy01",
     "customProxy00",
+    "customProxy01",
     # "customProxy01",
     # "freeProxy03",
     # "freeProxy04",
@@ -65,10 +66,10 @@ VALIDATE_HEADER = 'Server'  # 仅用于HEAD验证方式，百度响应头Server�
 VALIDATE_KEYWORD = 'bfe'
 
 # check 时的线程数量
-CHECK_THREAD = 2000
+CHECK_THREAD = 1000
 
 # 代理验证时超时时间
-VERIFY_TIMEOUT = 10
+VERIFY_TIMEOUT = 5
 
 # 近PROXY_CHECK_COUNT次校验中允许的最大失败次数,超过则剔除代理
 MAX_FAIL_COUNT = 1
