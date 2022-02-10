@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Created by QQ:253713 on 2022-02-07
+# Created by QQ 253713 on 2022-02-07
 
 import queue
 import random
@@ -339,7 +339,7 @@ def main():
                         all_xls_data.append(tmp)
                         time.sleep(5)
 
-                    with open("../../ippool/check_result.txt", 'w') as f:
+                    with open("check_result.txt", 'w') as f:
                         f.write(rep_all)
 
                     write_excel_xls_append(book_name_xls, all_xls_data)

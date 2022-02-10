@@ -33,10 +33,9 @@ def schedule():
     startScheduler("schedule")
 
 
-# 单独执行check
 @cli.command(name="check")
 def schedule():
-    """ 启动调度程序 """
+    """ 单独执行check """
     click.echo(BANNER)
     startScheduler("check")
 

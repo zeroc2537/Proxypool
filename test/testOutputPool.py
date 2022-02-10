@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Created by Zeroc on 2022-02-07
+# Created by QQ 253713 on 2022-02-07
 import queue
 import re
 import threading
@@ -111,7 +111,7 @@ def main():
     if len(argv) > 1 and argv[1] in ('-f',):
         filename = str(argv[2])
     else:
-        filename = "../../ippool/url.txt"
+        filename = "url.txt"
 
     if len(argv) > 3 and argv[3] in ('-o',):
         Outname = int(argv[4])

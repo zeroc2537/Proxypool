@@ -1,6 +1,5 @@
-# -*- coding:utf-8 -*-
-
-# coding=UTF-8
+# -*- coding: utf-8 -*-
+# Created by QQ 253713 on 2022-02-07
 import json
 import queue
 import threading
@@ -156,7 +155,7 @@ def main():
     if len(argv) > 1 and argv[1] in ('-f',):
         filename = int(argv[2])
     else:
-        filename = "../../ippool/url.txt"
+        filename = "url.txt"
 
     with open(filename, "r") as f:
         urls = f.read()
