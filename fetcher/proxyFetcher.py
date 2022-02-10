@@ -168,24 +168,120 @@ class ProxyFetcher(object):
         """
         前端爬取的总ip列表基于 /all 和 /get_all
         """
-        url = "http://showmethecode.ml/iptotal1.txt"
+        url = "http://showmethecode.ml/task00"
 
         resp = WebRequest().get(url, timeout=10)
         proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
         for proxy in proxies:
             yield proxy
 
-    # @staticmethod
-    # def customProxy01():
-    #     """
-    #     前端爬取的总ip列表基于 /all 和 /get_all
-    #     """
-    #     url = "http://showmethecode.ml/total_1_03"
-    #
-    #     resp = WebRequest().get(url, timeout=10)
-    #     proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
-    #     for proxy in proxies:
-    #         yield proxy
+    @staticmethod
+    def customProxy01():
+        """
+        前端爬取的总ip列表基于 /all 和 /get_all
+        """
+        url = "http://showmethecode.ml/task01"
+
+        resp = WebRequest().get(url, timeout=10)
+        proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
+        for proxy in proxies:
+            yield proxy
+
+    @staticmethod
+    def customProxy02():
+        """
+        前端爬取的总ip列表基于 /all 和 /get_all
+        """
+        url = "http://showmethecode.ml/task02"
+
+        resp = WebRequest().get(url, timeout=10)
+        proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
+        for proxy in proxies:
+            yield proxy
+
+    @staticmethod
+    def customProxy03():
+        """
+        前端爬取的总ip列表基于 /all 和 /get_all
+        """
+        url = "http://showmethecode.ml/task03"
+
+        resp = WebRequest().get(url, timeout=10)
+        proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
+        for proxy in proxies:
+            yield proxy
+
+    @staticmethod
+    def customProxy04():
+        """
+        前端爬取的总ip列表基于 /all 和 /get_all
+        """
+        url = "http://showmethecode.ml/task04"
+
+        resp = WebRequest().get(url, timeout=10)
+        proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
+        for proxy in proxies:
+            yield proxy
+
+    @staticmethod
+    def customProxy05():
+        """
+        前端爬取的总ip列表基于 /all 和 /get_all
+        """
+        url = "http://showmethecode.ml/task05"
+
+        resp = WebRequest().get(url, timeout=10)
+        proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
+        for proxy in proxies:
+            yield proxy
+
+    @staticmethod
+    def customProxy06():
+        """
+        前端爬取的总ip列表基于 /all 和 /get_all
+        """
+        url = "http://showmethecode.ml/task06"
+
+        resp = WebRequest().get(url, timeout=10)
+        proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
+        for proxy in proxies:
+            yield proxy
+
+    @staticmethod
+    def customProxy07():
+        """
+        前端爬取的总ip列表基于 /all 和 /get_all
+        """
+        url = "http://showmethecode.ml/task07"
+
+        resp = WebRequest().get(url, timeout=10)
+        proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
+        for proxy in proxies:
+            yield proxy
+
+    @staticmethod
+    def customProxy08():
+        """
+        前端爬取的总ip列表基于 /all 和 /get_all
+        """
+        url = "http://showmethecode.ml/task08"
+
+        resp = WebRequest().get(url, timeout=10)
+        proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
+        for proxy in proxies:
+            yield proxy
+
+    @staticmethod
+    def customProxy09():
+        """
+        前端爬取的总ip列表基于 /all 和 /get_all
+        """
+        url = "http://showmethecode.ml/task09"
+
+        resp = WebRequest().get(url, timeout=10)
+        proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
+        for proxy in proxies:
+            yield proxy
 
     # @staticmethod
     # def wallProxy01():
@@ -252,7 +348,5 @@ class ProxyFetcher(object):
 
 if __name__ == '__main__':
     p = ProxyFetcher()
-    for _ in p.freeProxy11():
-        print(_)
 
 # http://nntime.com/proxy-list-01.htm

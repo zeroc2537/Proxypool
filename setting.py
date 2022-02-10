@@ -44,11 +44,16 @@ TABLE_NAME = 'use_proxy'
 
 # ###### config the proxy fetch function ######
 PROXY_FETCHER = [
-    # "freeProxy01",
     "customProxy00",
     # "customProxy01",
-    # "customProxy01",
-    # "freeProxy03",
+    # "customProxy02",
+    # "customProxy03",
+    # "customProxy04",
+    # "customProxy05",
+    # "customProxy06",
+    # "customProxy07",
+    # "customProxy08",
+    # "customProxy09",
     # "freeProxy04",
     # "freeProxy05",
     # "freeProxy06",
@@ -56,22 +61,6 @@ PROXY_FETCHER = [
     # "freeProxy08",
     # "freeProxy09",
     # "freeProxy10"
-]
-
-CRAW1 = [
-    "customProxy00",
-]
-
-CRAW2 = [
-    "customProxy01",
-]
-
-CRAW3 = [
-    "customProxy02",
-]
-
-CRAW4 = [
-    "customProxy03",
 ]
 
 # ############# proxy validator #################
