@@ -37,6 +37,8 @@ def __runProxyFetch():
 def __runProxyCheck():
     proxy_handler = ProxyHandler()
     proxy_queue = Queue()
+    with open("2.txt", "a") as f:
+        f.write(proxy_handler.db.getCount().get("total", 0))
     if proxy_handler.db.getCount().get("total", 0) < proxy_handler.conf.poolSizeMin:
         __runProxyFetch()
     for proxy in proxy_handler.getAll():
@@ -45,9 +47,6 @@ def __runProxyCheck():
 
 
 def runScheduler(name):
-    with open("2.txt", "a") as f:
-        f.write(name)
-
     __runProxyFetch()
 
     timezone = ConfigHandler().timezone
