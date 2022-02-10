@@ -89,7 +89,7 @@ MAX_FAIL_COUNT = 1
 # MAX_FAIL_RATE = 0.1
 
 # proxyCheck时代理数量少于POOL_SIZE_MIN触发抓取
-POOL_SIZE_MIN = 500
+POOL_SIZE_MIN = 5000
 
 # ############# scheduler config #################
 
