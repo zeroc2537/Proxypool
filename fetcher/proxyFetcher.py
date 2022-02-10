@@ -168,7 +168,7 @@ class ProxyFetcher(object):
         """
         前端爬取的总ip列表基于 /all 和 /get_all
         """
-        url = "http://showmethecode.ml/task00"
+        url = "http://10.1.96.5/task00"
 
         resp = WebRequest().get(url, timeout=10)
         proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
@@ -180,7 +180,7 @@ class ProxyFetcher(object):
         """
         前端爬取的总ip列表基于 /all 和 /get_all
         """
-        url = "http://showmethecode.ml/task01"
+        url = "http://10.1.96.5/task01"
 
         resp = WebRequest().get(url, timeout=10)
         proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
@@ -192,7 +192,7 @@ class ProxyFetcher(object):
         """
         前端爬取的总ip列表基于 /all 和 /get_all
         """
-        url = "http://showmethecode.ml/task02"
+        url = "http://10.1.96.5/task02"
 
         resp = WebRequest().get(url, timeout=10)
         proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
@@ -204,7 +204,7 @@ class ProxyFetcher(object):
         """
         前端爬取的总ip列表基于 /all 和 /get_all
         """
-        url = "http://showmethecode.ml/task03"
+        url = "http://10.1.96.5/task03"
 
         resp = WebRequest().get(url, timeout=10)
         proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
@@ -216,7 +216,7 @@ class ProxyFetcher(object):
         """
         前端爬取的总ip列表基于 /all 和 /get_all
         """
-        url = "http://showmethecode.ml/task04"
+        url = "http://10.1.96.5/task04"
 
         resp = WebRequest().get(url, timeout=10)
         proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
@@ -228,7 +228,7 @@ class ProxyFetcher(object):
         """
         前端爬取的总ip列表基于 /all 和 /get_all
         """
-        url = "http://showmethecode.ml/task05"
+        url = "http://10.1.96.5/task05"
 
         resp = WebRequest().get(url, timeout=10)
         proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
@@ -240,7 +240,7 @@ class ProxyFetcher(object):
         """
         前端爬取的总ip列表基于 /all 和 /get_all
         """
-        url = "http://showmethecode.ml/task06"
+        url = "http://10.1.96.5/task06"
 
         resp = WebRequest().get(url, timeout=10)
         proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
@@ -252,7 +252,7 @@ class ProxyFetcher(object):
         """
         前端爬取的总ip列表基于 /all 和 /get_all
         """
-        url = "http://showmethecode.ml/task07"
+        url = "http://10.1.96.5/task07"
 
         resp = WebRequest().get(url, timeout=10)
         proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
@@ -264,7 +264,7 @@ class ProxyFetcher(object):
         """
         前端爬取的总ip列表基于 /all 和 /get_all
         """
-        url = "http://showmethecode.ml/task08"
+        url = "http://10.1.96.5/task08"
 
         resp = WebRequest().get(url, timeout=10)
         proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
@@ -276,7 +276,7 @@ class ProxyFetcher(object):
         """
         前端爬取的总ip列表基于 /all 和 /get_all
         """
-        url = "http://showmethecode.ml/task09"
+        url = "http://10.1.96.5/task09"
 
         resp = WebRequest().get(url, timeout=10)
         proxies = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', resp.text)
