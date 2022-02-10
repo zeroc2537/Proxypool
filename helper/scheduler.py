@@ -25,6 +25,7 @@ from util.six import Queue
 
 
 def __runProxyFetch():
+    pass
     proxy_queue = Queue()
     proxy_fetcher = Fetcher()
 
@@ -37,15 +38,12 @@ def __runProxyFetch():
 def __runProxyCheck():
     proxy_handler = ProxyHandler()
     proxy_queue = Queue()
-    with open("2.txt", "a") as f:
 
-        f.write(str(proxy_handler.db.getCount().get("total", 0)) + "end")
-
-        if proxy_handler.db.getCount().get("total", 0) < proxy_handler.conf.poolSizeMin:
-            __runProxyFetch()
-        for proxy in proxy_handler.getAll():
-            proxy_queue.put(proxy)
-        Checker("use", proxy_queue)
+    if proxy_handler.db.getCount().get("total", 0) < proxy_handler.conf.poolSizeMin:
+        __runProxyFetch()
+    for proxy in proxy_handler.getAll():
+        proxy_queue.put(proxy)
+    Checker("use", proxy_queue)
 
 
 def runScheduler(name):
