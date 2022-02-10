@@ -37,7 +37,7 @@ PORT = 6020
 # example:
 #      Redis: redis://:password@ip:port/db
 #      Ssdb:  ssdb://:password@ip:port
-DB_CONN = 'redis://:proxy666@127.0.0.1:6379/0'
+DB_CONN = 'redis://:proxy666@10.1.96.3:6379/0'
 
 # proxy table name
 TABLE_NAME = 'use_proxy'
@@ -56,6 +56,22 @@ PROXY_FETCHER = [
     # "freeProxy08",
     # "freeProxy09",
     # "freeProxy10"
+]
+
+CRAW1 = [
+    "customProxy00",
+]
+
+CRAW2 = [
+    "customProxy01",
+]
+
+CRAW3 = [
+    "customProxy02",
+]
+
+CRAW4 = [
+    "customProxy03",
 ]
 
 # ############# proxy validator #################

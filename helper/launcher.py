@@ -13,9 +13,10 @@
 __author__ = 'JHao'
 
 import sys
+
 from db.dbClient import DbClient
-from handler.logHandler import LogHandler
 from handler.configHandler import ConfigHandler
+from handler.logHandler import LogHandler
 
 log = LogHandler('launcher')
 
@@ -26,10 +27,10 @@ def startServer():
     runFlask()
 
 
-def startScheduler():
+def startScheduler(name):
     __beforeStart()
     from helper.scheduler import runScheduler
-    runScheduler()
+    runScheduler(name)
 
 
 def __beforeStart():

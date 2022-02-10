@@ -44,6 +44,11 @@ class ConfigHandler(withMetaclass(Singleton)):
     @property
     def fetchers(self):
         reload_six(setting)
+        # 修改这里 执行特定craw
+        # return setting.CRAW1
+        # return setting.CRAW2
+        # return setting.CRAW3
+        # return setting.CRAW4
         return setting.PROXY_FETCHER
 
     @LazyProperty

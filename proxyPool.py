@@ -13,6 +13,7 @@
 __author__ = 'JHao'
 
 import click
+
 from helper.launcher import startServer, startScheduler
 from setting import BANNER, VERSION
 
@@ -29,7 +30,15 @@ def cli():
 def schedule():
     """ 启动调度程序 """
     click.echo(BANNER)
-    startScheduler()
+    startScheduler("schedule")
+
+
+# 单独执行check
+@cli.command(name="check")
+def schedule():
+    """ 启动调度程序 """
+    click.echo(BANNER)
+    startScheduler("check")
 
 
 @cli.command(name="server")

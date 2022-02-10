@@ -13,15 +13,15 @@
 """
 __author__ = 'JHao'
 
-from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.executors.pool import ProcessPoolExecutor
+from apscheduler.schedulers.blocking import BlockingScheduler
 
-from util.six import Queue
-from helper.fetch import Fetcher
-from helper.check import Checker
+from handler.configHandler import ConfigHandler
 from handler.logHandler import LogHandler
 from handler.proxyHandler import ProxyHandler
-from handler.configHandler import ConfigHandler
+from helper.check import Checker
+from helper.fetch import Fetcher
+from util.six import Queue
 
 
 def __runProxyFetch():
@@ -44,17 +44,22 @@ def __runProxyCheck():
     Checker("use", proxy_queue)
 
 
-def runScheduler():
+def runScheduler(name):
     __runProxyFetch()
 
     timezone = ConfigHandler().timezone
     scheduler_log = LogHandler("scheduler")
     scheduler = BlockingScheduler(logger=scheduler_log, timezone=timezone)
 
-    scheduler.add_job(__runProxyFetch, 'interval', minutes=ConfigHandler().PROXY_FETCH_TIME, id="proxy_fetch",
-                      name="proxy采集")
-    scheduler.add_job(__runProxyCheck, 'interval', minutes=ConfigHandler().PROXY_CHECK_TIME, id="proxy_check",
-                      name="proxy检查")
+    if name == 'check':
+        scheduler.add_job(__runProxyCheck, 'interval', minutes=ConfigHandler().PROXY_CHECK_TIME, id="proxy_check",
+                          name="proxy检查")
+    else:
+        scheduler.add_job(__runProxyCheck, 'interval', minutes=ConfigHandler().PROXY_CHECK_TIME, id="proxy_check",
+                          name="proxy检查")
+        scheduler.add_job(__runProxyFetch, 'interval', minutes=ConfigHandler().PROXY_FETCH_TIME, id="proxy_fetch",
+                          name="proxy采集")
+
     executors = {
         'default': {'type': 'threadpool', 'max_workers': 20},
         'processpool': ProcessPoolExecutor(max_workers=5)
@@ -70,4 +75,4 @@ def runScheduler():
 
 
 if __name__ == '__main__':
-    runScheduler()
+    runScheduler("")
