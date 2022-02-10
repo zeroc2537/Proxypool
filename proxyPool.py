@@ -26,6 +26,13 @@ def cli():
     """ProxyPool cli工具"""
 
 
+@cli.command(name="server")
+def server():
+    """ 启动api服务 """
+    click.echo(BANNER)
+    startServer()
+
+
 @cli.command(name="schedule")
 def schedule():
     """ 启动调度程序 """
@@ -40,12 +47,11 @@ def schedule():
     startScheduler("check")
 
 
-@cli.command(name="server")
-def server():
-    """ 启动api服务 """
+@cli.command(name="craw")
+def schedule():
+    """ 单独执行craw """
     click.echo(BANNER)
-    startServer()
-
+    startScheduler("craw")
 
 if __name__ == '__main__':
     cli()

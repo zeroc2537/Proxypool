@@ -53,12 +53,16 @@ def runScheduler(name):
 
     if name == 'check':
         scheduler.add_job(__runProxyCheck, 'interval', minutes=ConfigHandler().PROXY_CHECK_TIME, id="proxy_check",
-                          name="proxy检查")
+                          name="proxy独立检查")
+    elif name == "craw"
+        scheduler.add_job(__runProxyFetch, 'interval', minutes=ConfigHandler().PROXY_FETCH_TIME, id="proxy_fetch",
+                          name="proxy独立采集")
+
     else:
-        scheduler.add_job(__runProxyCheck, 'interval', minutes=ConfigHandler().PROXY_CHECK_TIME, id="proxy_check",
-                          name="proxy检查")
         scheduler.add_job(__runProxyFetch, 'interval', minutes=ConfigHandler().PROXY_FETCH_TIME, id="proxy_fetch",
                           name="proxy采集")
+        scheduler.add_job(__runProxyCheck, 'interval', minutes=ConfigHandler().PROXY_CHECK_TIME, id="proxy_check",
+                          name="proxy检查")
 
     executors = {
         'default': {'type': 'threadpool', 'max_workers': 20},
