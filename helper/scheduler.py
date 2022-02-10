@@ -25,7 +25,6 @@ from util.six import Queue
 
 
 def __runProxyFetch():
-    pass
     proxy_queue = Queue()
     proxy_fetcher = Fetcher()
 
@@ -47,7 +46,7 @@ def __runProxyCheck():
 
 
 def runScheduler(name):
-    __runProxyFetch()
+    # __runProxyFetch()
 
     timezone = ConfigHandler().timezone
     scheduler_log = LogHandler("scheduler")
