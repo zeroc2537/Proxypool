@@ -53,5 +53,6 @@ def schedule():
     click.echo(BANNER)
     startScheduler("craw")
 
+
 if __name__ == '__main__':
     cli()

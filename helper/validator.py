@@ -13,11 +13,12 @@
 __author__ = 'JHao'
 
 from re import findall
+
 import requests
-from util.six import withMetaclass
-from util.singleton import Singleton
+
 from handler.configHandler import ConfigHandler
-from handler.logHandler import LogHandler
+from util.singleton import Singleton
+from util.six import withMetaclass
 
 conf = ConfigHandler()
 
@@ -73,7 +74,7 @@ def httpTimeOutValidator(proxy):
         else:
             # log.info(resp_headers)
             return False
-    except Exception as e:
+    except Exception:
         return False
 
 
@@ -85,5 +86,5 @@ def httpsTimeOutValidator(proxy):
     try:
         r = requests.head(conf.httpsUrl, headers=HEADER, proxies=proxies, timeout=conf.verifyTimeout, verify=False)
         return True if r.status_code == 200 else False
-    except Exception as e:
+    except Exception:
         return False
