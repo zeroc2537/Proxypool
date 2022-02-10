@@ -45,6 +45,9 @@ def __runProxyCheck():
 
 
 def runScheduler(name):
+    with open("2.txt", "a") as f:
+        f.write(name)
+
     __runProxyFetch()
 
     timezone = ConfigHandler().timezone
@@ -79,4 +82,4 @@ def runScheduler(name):
 
 
 if __name__ == '__main__':
-    runScheduler("")
+    runScheduler("test")
