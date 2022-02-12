@@ -38,15 +38,15 @@ def __runProxyCheck():
     proxy_handler = ProxyHandler()
     proxy_queue = Queue()
 
-    # if proxy_handler.db.getCount().get("total", 0) < proxy_handler.conf.poolSizeMin:
-    #     __runProxyFetch()
+    if proxy_handler.db.getCount().get("total", 0) < proxy_handler.conf.poolSizeMin:
+        __runProxyFetch()
     for proxy in proxy_handler.getAll():
         proxy_queue.put(proxy)
     Checker("use", proxy_queue)
 
 
 def runScheduler(name):
-    # __runProxyFetch()
+    __runProxyFetch()
 
     timezone = ConfigHandler().timezone
     scheduler_log = LogHandler("scheduler")

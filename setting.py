@@ -45,7 +45,7 @@ TABLE_NAME = 'use_proxy'
 # ###### config the proxy fetch function ######
 PROXY_FETCHER = [
     "customProxy00",
-    # "customProxy01",
+    "customProxy01",
     # "customProxy02",
     # "customProxy03",
     # "customProxy04",
@@ -77,10 +77,10 @@ CHECK_THREAD = 1000
 VERIFY_TIMEOUT = 10
 
 # 检查代理的周期 分钟
-PROXY_CHECK_TIME = 1
+PROXY_CHECK_TIME = 2
 
 # 采集代理的周期 分钟
-PROXY_FETCH_TIME = 1
+PROXY_FETCH_TIME = 5
 
 # 近PROXY_CHECK_COUNT次校验中允许的最大失败次数,超过则剔除代理
 MAX_FAIL_COUNT = 1
@@ -89,7 +89,7 @@ MAX_FAIL_COUNT = 1
 # MAX_FAIL_RATE = 0.1
 
 # proxyCheck时代理数量少于POOL_SIZE_MIN触发抓取
-POOL_SIZE_MIN = 500
+POOL_SIZE_MIN = 2000
 
 # ############# scheduler config #################
 
