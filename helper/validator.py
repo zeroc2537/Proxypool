@@ -68,7 +68,7 @@ def httpTimeOutValidator(proxy):
     try:
         r = requests.head(conf.httpUrl, headers=HEADER, proxies=proxies, timeout=conf.verifyTimeout)
         # 修改check算法，只要head请求成功，就算有效
-        # resp_headers = r.headers
+        resp_headers = r.headers
         if conf.validate_HEADER in resp_headers.keys() and conf.validate_KEYWORD in resp_headers[conf.validate_HEADER]:
             # if r.status_code == 200:
             return True
