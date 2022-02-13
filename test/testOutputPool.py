@@ -109,20 +109,24 @@ def main():
     start = time.time()
 
     if len(argv) > 1 and argv[1] in ('-f',):
+
         filename = str(argv[2])
+        with open(filename, "r") as f:
+            urllist = f.read().splitlines()
+    elif len(argv) > 1 and argv[1] in ('-u',):
+        urllist = [argv[2]]
     else:
         filename = "url.txt"
+        with open(filename, "r") as f:
+            urllist = f.read().splitlines()
 
     if len(argv) > 3 and argv[3] in ('-o',):
         Outname = int(argv[4])
     else:
         Outname = "ip.txt"
 
-    with open(filename, "r") as f:
-        url = f.read().splitlines()
-
-    urllist = url
     pageQueue = queue.Queue()
+
     for i in urllist:
         pageQueue.put(i)
 
